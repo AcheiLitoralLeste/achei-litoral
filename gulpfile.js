@@ -29,7 +29,7 @@ var styleSRC     = './src/sass/app.scss';
 var styleURL     = './dist/css/';
 var mapURL       = './';
 
-var jsSRC        = './src/js/';
+var jsSRC        = './src/js/*.js';
 var jsFront      = 'main.js';
 var jsFiles      = [ jsFront ];
 var jsURL        = './dist/js/';
@@ -80,26 +80,34 @@ function css(done) {
 };
 
 function js(done) {
-	jsFiles.map( function( entry ) {
-		return browserify({
-			entries: [jsSRC + entry]
-		})
-		.transform( babelify, { presets: [ '@babel/preset-env' ] } )
-		.bundle()
-		.pipe( source( entry ) )
-		.pipe( rename( {
-			extname: '.min.js'
-        } ) )
-		.pipe( buffer() )
-		.pipe( gulpif( options.has( 'production' ), stripDebug() ) )
-		.pipe( sourcemaps.init({ loadMaps: true }) )
-		.pipe( uglify() )
-		.pipe( sourcemaps.write( '.' ) )
-		.pipe( dest( jsURL ) )
-		.pipe( browserSync.stream() );
-	});
-	done();
+  src(jsSRC)
+    .pipe(uglify())
+    .pipe(dest(jsURL))
+    .pipe(browserSync.stream());
+  done();
 };
+
+// function js(done) {
+// 	jsFiles.map( function( entry ) {
+// 		return browserify({
+// 			entries: [jsSRC + entry]
+// 		})
+// 		.transform( babelify, { presets: [ '@babel/preset-env' ] } )
+// 		.bundle()
+// 		.pipe( source( entry ) )
+// 		.pipe( rename( {
+// 			extname: '.min.js'
+//         } ) )
+// 		.pipe( buffer() )
+// 		.pipe( gulpif( options.has( 'production' ), stripDebug() ) )
+// 		.pipe( sourcemaps.init({ loadMaps: true }) )
+// 		.pipe( uglify() )
+// 		.pipe( sourcemaps.write( '.' ) )
+// 		.pipe( dest( jsURL ) )
+// 		.pipe( browserSync.stream() );
+// 	});
+// 	done();
+// };
 
 function triggerPlumber( src_file, dest_file ) {
 	return src( src_file )
@@ -125,7 +133,7 @@ function watch_files() {
 	watch(imgWatch, series(images, reload));
 	watch(fontsWatch, series(fonts, reload));
 	watch(htmlWatch, series(html, reload));
-	src(jsURL + 'main.min.js')
+	src(jsURL + 'main.js')
 		.pipe( notify({ message: 'Gulp is Watching, Happy Coding!' }) );
 }
 

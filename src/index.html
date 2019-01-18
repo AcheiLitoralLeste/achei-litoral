@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width">
     <link rel="apple-touch-icon" href="images/icon-gl.png">
     <link rel="shortcut icon" type="image/x-icon" href="images/icon-gl.png">
-    <link rel="manifest" href="manifest.json">
+    <!-- <link rel="manifest" href="manifest.json"> -->
     <title>Achei Litoral</title>
     <link rel="stylesheet" href="css/app.min.css">
   </head>
@@ -44,14 +44,14 @@
           <article class="">
             <div class="box-item">
               <div class="box-title">
-                <h2 class=""></h2>
+                <h2 class="" data-js="company-name"></h2>
               </div>
               <div class="box-body">
                 <ul>
                   <li><strong>Endereço:</strong> </li>
                   <li><strong>Bairro:</strong> </li>
                   <li><strong>E-mail:</strong> </li>
-                  <li><strong>Telefone:</strong> </li>
+                  <li><strong>Telefone:</strong> <span data-js="company-phone"></span></li>
                   <li><strong>Categoria:</strong> </li>
                 </ul>
               </div>
@@ -104,28 +104,8 @@
             </div>
         </footer>
     </main>
-      <!-- <script src="js/lib/angular.min.js"></script>
-      <script src="js/lib/angular-route.min.js"></script>
-      <script src="js/lib/ngMask.min.js"></script>
+      <!-- <script src="js/main.min.js"></script> -->
+      <script src="js/dom.js"></script>
       <script src="js/main.js"></script>
-      <script src="js/index.js"></script> -->
-
-      <!-- <script src="js/controllers/company-controller.js"></script>
-      <script src="js/directives/uiDirective.js"></script> -->
-
-      <!-- <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script> -->
-      <!-- <script>
-        var config = {
-          apiKey: "AIzaSyCyYFrwM3JtEFTNEbVrk3ug7D2dZ7n5L2I",
-          authDomain: "achei-litoral-leste.firebaseapp.com",
-          databaseURL: "https://achei-litoral-leste.firebaseio.com",
-          projectId: "achei-litoral-leste",
-          storageBucket: "achei-litoral-leste.appspot.com",
-          messagingSenderId: "153432447027"
-        };
-        firebase.initializeApp(config);
-        </script> -->
-      <!-- AngularFire -->
-      <!-- <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script> -->
   </body>
 </html>
