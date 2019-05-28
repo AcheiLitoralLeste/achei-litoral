@@ -1,55 +1,44 @@
 {
-	"name": "achei-litoral",
-	"version": "1.0.0",
-	"description": "",
-	"main": "gulpfile.js",
-	"scripts": {
-		"dev": "",
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"deploy": "gh-pages -d dist -r https://github.com/dancasttro/acheilitoral -b master"
-	},
-	"author": "",
-	"license": "ISC",
-	"devDependencies": {
-		"@babel/core": "^7.2.2",
-		"@babel/preset-env": "^7.2.3",
-		"babelify": "^10.0.0",
-		"browser-sync": "^2.26.3",
-		"browserify": "^16.2.3",
-		"browserify-shim": "^3.8.14",
-		"gulp": "^4.0.0",
-		"gulp-autoprefixer": "^6.0.0",
-		"gulp-concat": "^2.5.2",
-		"gulp-if": "^2.0.2",
-		"gulp-notify": "^3.0.0",
-		"gulp-options": "^1.1.1",
-		"gulp-plumber": "^1.2.1",
-		"gulp-rename": "^1.2.0",
-		"gulp-sass": "^4.0.2",
-		"gulp-sourcemaps": "^2.6.1",
-		"gulp-strip-debug": "^3.0.0",
-		"gulp-uglify": "^3.0.0",
-		"gulp-uglifycss": "^1.0.9",
-		"vinyl-buffer": "^1.0.0",
-		"vinyl-source-stream": "^2.0.0"
-	},
-	"babel": {
-		"presets": [
-			"@babel/preset-env"
-		]
-	},
-	"browserify": {
-		"transform": [
-			"browserify-shim"
-		]
-	},
-	"browser": {
-		"jquery": "./node_modules/jquery/dist/jquery.js"
-	},
-	"browserify-shim": {
-		"jquery": "$"
-	},
-	"dependencies": {
-		"acorn": "^6.0.5"
-	}
+  "name": "achei-litoral",
+  "version": "1.0.0",
+  "description": "Novo Site",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "jest --coverage",
+    "test:watch": "npm test -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AcheiLitoralLeste/achei-litoral.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AcheiLitoralLeste/achei-litoral/issues"
+  },
+  "homepage": "https://github.com/AcheiLitoralLeste/achei-litoral#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-jest": "^24.1.0",
+    "babel-loader": "^6.4.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "chai": "^4.2.0",
+    "jest-cli": "^24.1.0",
+    "react-hot-loader": "^3.1.3",
+    "standard": "^11.0.0",
+    "standard-loader": "^4.0.0",
+    "webpack": "^1.15.0",
+    "webpack-dev-server": "^1.16.5",
+    "webpack-validator": "^3.0.0"
+  },
+  "dependencies": {
+    "@fdaciuk/ajax": "^3.0.4",
+    "jest": "^24.1.0",
+    "jshint": "^2.10.1",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  }
 }
