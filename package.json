@@ -50,6 +50,6 @@
 		"jquery": "$"
 	},
 	"dependencies": {
-		"acorn": "^6.0.5"
+		"acorn": "^6.4.1"
 	}
 }
